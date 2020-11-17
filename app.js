@@ -29,7 +29,8 @@ http.createServer((req,res) => {
 })
 
 handler.on('error',err => {
-  console.error('Error',err.message})
+  console.error('Error',err.message)
+})
 
 // 拦截push，执行 Deploy 脚本
 handler.on('push', function (event) {
@@ -39,13 +40,4 @@ handler.on('push', function (event) {
     console.log('deploy master..')
     run_cmd('sh', ['./autoDeploy.sh'], function(text){ console.log(text) });
   }
-})
-onst Koa = require('koa2');
-const app = new Koa();
-
-app.use(async(ctx)=>{
-	ctx.body = '<h1>hello world</h1>'
-});
-app.listen(3000,()=>{
-	console.log('[server]started at port 3000....')
 })
