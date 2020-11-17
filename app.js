@@ -37,6 +37,7 @@ handler.on('error',err => {
 // 拦截push，执行 Deploy 脚本
 handler.on('push', (event)=> {
   console.log('Received push');
+  console.log('123')
     if(event.payload.ref === 'refs/heads/init'){
 
     run_cmd('sh', ['./autoDepoly.sh'], function(text){
