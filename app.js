@@ -10,12 +10,13 @@ function run_cmd(cmd, args, callback) {
   });
   child.stdout.on('end', function () {
     console.log('Deploy 完成')
+    
     callback(resp)
   });
 }
 
 const handler = createHandler({
-    path:'/docker-pm2', // url 后缀
+    path:'/source/pm2', // url 后缀
     secret:'123123' // 你的密码
 })
 
