@@ -15,7 +15,7 @@ function run_cmd(cmd, args, callback) {
 }
 
 const handler = createHandler({
-    path:'/docker', // url 后缀
+    path:'/docker-pm2', // url 后缀
     secret:'123123' // 你的密码
 })
 
